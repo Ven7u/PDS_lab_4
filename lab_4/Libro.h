@@ -19,10 +19,12 @@ private:
 public:
     Libro():Contenitore(){
     }
-    
+
     Contenitore* aggiungi(Testo* textPtr);
     std::string trova(std::string text);
-    
+    void setTitolo(std::string titolo);
+    std::string getTitolo();
+
 };
 
 #endif /* defined(__lab_4__Libro__) */

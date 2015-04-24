@@ -10,26 +10,29 @@
 #include <typeinfo>
 #include <sstream>
 
+void Libro::setTitolo(std::string titolo);
+std::string Libro::getTitolo();
+
 Contenitore* Libro::aggiungi(Testo* textPtr){
     Capitolo *c;
-    
+
     if ((c = dynamic_cast<Capitolo *>(textPtr)) != NULL) {
         Contenitore::listaTesti.push_back(c);
         return this;
     }
-    
+
     else{
         throw new std::bad_cast();
     }
 }
 
 std::string Libro::trova(std::string text){
-    
+
     std::list<Testo*>::iterator p;
     std::string found;
 
     int i=0;
-    
+
     for( p = Contenitore::listaTesti.begin(); p != Contenitore::listaTesti.end(); p++){
         i++;
         found = (*p)->trova(text);
@@ -38,6 +41,6 @@ std::string Libro::trova(std::string text){
             return found;
         }
     }
-    
+
     return "";
 }
