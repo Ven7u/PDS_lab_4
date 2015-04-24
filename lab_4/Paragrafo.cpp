@@ -10,9 +10,14 @@
 
 
 std::string Paragrafo::trova(std::string text){
-    int pos;
+    std::size_t pos;
+    
+    
     pos = Paragrafo::text.find(text);
-    return std::to_string(pos) + ":" + std::to_string(pos + text.size()) + "\n";
+    if (pos != std::string::npos) {
+        return std::to_string(pos) + ":" + std::to_string(pos + text.size() -1) + "\n";
+    }
+    return "";
 }
 
 void Paragrafo::setText(std::string text){

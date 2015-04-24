@@ -10,8 +10,12 @@
 #include <typeinfo>
 #include <sstream>
 
-void Libro::setTitolo(std::string titolo);
-std::string Libro::getTitolo();
+void Libro::setTitolo(std::string titolo){
+    this->titolo = titolo;
+}
+std::string Libro::getTitolo(){
+    return this->titolo;
+}
 
 Contenitore* Libro::aggiungi(Testo* textPtr){
     Capitolo *c;
