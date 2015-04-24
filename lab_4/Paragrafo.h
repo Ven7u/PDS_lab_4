@@ -19,6 +19,8 @@ private:
 
 public:
     std::string trova(std::string text);
+	void setText( std::string text);
+	std::string getText(std::string text);
 };
 
 #endif /* defined(__lab_4__Paragrafo__) */

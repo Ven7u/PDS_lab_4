@@ -13,7 +13,7 @@
 
 Contenitore* Capitolo::aggiungi(Testo* textPtr){
     Testo *c;
-    if ((c = dynamic_cast<Libro *>(textPtr)) != NULL) {
+    if ((c = dynamic_cast<Libro *>(textPtr)) == NULL) {
         Contenitore::listaTesti.push_back(textPtr);
         return this;
     }
